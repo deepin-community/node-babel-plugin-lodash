@@ -1,0 +1,58 @@
+Description: ignore tests locked to a dependency version
+Author: Xavier Guimard <yadd@debian.org>
+Forwarded: not-needed
+Last-Update: 2021-01-09
+
+--- a/test/index.js
++++ b/test/index.js
+@@ -20,24 +20,6 @@
+ describe('cherry-picked modular builds', function() {
+   this.timeout(0)
+ 
+-  _.each(glob.sync(path.join(__dirname, 'fixtures/*/')), (testPath) => {
+-    const testName = getTestName(testPath)
+-    const lodashId = getLodashId(testName)
+-    const actualPath = path.join(testPath, 'actual.js')
+-    const expectedPath = path.join(testPath, 'expected.js')
+-
+-    it(`should work with ${ testName }`, () => {
+-      const expected = fs.readFileSync(expectedPath, 'utf8')
+-      const actual = transformFileSync(actualPath, {
+-        'plugins': [[plugin, { 'id': [lodashId, '@storybook/addon-links'] }]]
+-      }).code
+-
+-      assert.strictEqual(_.trim(actual), _.trim(expected))
+-    })
+-  })
+-
+-  /*--------------------------------------------------------------------------*/
+-
+   _.each(glob.sync(path.join(__dirname, 'error-fixtures/*/')), (testPath) => {
+     const testName = getTestName(testPath)
+     const actualPath = path.join(testPath, 'actual.js')
+@@ -51,25 +33,6 @@
+     })
+   })
+ 
+-  /*--------------------------------------------------------------------------*/
+-
+-  _.each(glob.sync(path.join(__dirname, 'mixed-fixtures/*/')), (testPath) => {
+-    const testName = getTestName(testPath)
+-    const actualPath = path.join(testPath, 'actual.js')
+-    const expectedPath = path.join(testPath, 'expected.js')
+-    const optionsPath = path.join(testPath, 'options.json')
+-    const options = fs.existsSync(optionsPath) ? require(optionsPath) : {}
+-
+-    it(`should work with ${ testName }`, () => {
+-      const expected = fs.readFileSync(expectedPath, 'utf8')
+-      const actual = transformFileSync(actualPath, {
+-        'plugins': [[plugin, options]]
+-      }).code
+-
+-      assert.strictEqual(_.trim(actual), _.trim(expected))
+-    })
+-  })
+-
+   /*--------------------------------------------------------------------------*/
+ 
+   _.each(glob.sync(path.join(__dirname, 'parsing-fixtures/*/')), (testPath) => {

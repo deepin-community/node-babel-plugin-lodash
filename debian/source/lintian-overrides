@@ -1,0 +1,9 @@
+# false positive, test data
+source-is-missing test/mixed-fixtures/object-rest-spread/expected.js line length is 619 characters (>512)
+source-contains-prebuilt-javascript-object test/mixed-fixtures/object-rest-spread/expected.js line length is 619 characters (>512)
+very-long-line-length-in-source-file test/mixed-fixtures/object-rest-spread/expected.js line length is 619 characters (>512)
+# false positive
+source-is-missing debian/tests/test_modules/babel-helper-module-imports/lib/import-builder.js line length is 269 characters (>256)
+source-is-missing debian/tests/test_modules/babel-helper-module-imports/lib/import-injector.js line length is 269 characters (>256)
+source-contains-prebuilt-javascript-object debian/tests/test_modules/babel-helper-module-imports/lib/import-builder.js line length is 269 characters (>256)
+source-contains-prebuilt-javascript-object debian/tests/test_modules/babel-helper-module-imports/lib/import-injector.js line length is 269 characters (>256)

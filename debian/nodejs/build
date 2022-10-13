@@ -1,0 +1,4 @@
+rollup src/index.js -f cjs -o lib/index.js # bootstrap build
+mkdir -p node_modules
+ln -s .. node_modules/babel-plugin-lodash
+babeljs src --out-dir lib

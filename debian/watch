@@ -1,0 +1,12 @@
+version=4
+opts=\
+dversionmangle=auto,\
+filenamemangle=s/.*\/v?([\d\.-]+)\.tar\.gz/node-babel-plugin-lodash-$1.tar.gz/ \
+ https://github.com/lodash/babel-plugin-lodash/releases .*/archive/v?([\d\.]+).tar.gz group
+
+opts=\
+component=require-package-name,\
+ctype=nodejs,\
+dversionmangle=auto,\
+filenamemangle=s/.*\/v?([\d\.-]+)\.tar\.gz/node-require-package-name-$1.tar.gz/ \
+ https://github.com/mattdesl/require-package-name/tags .*/archive/v?([\d\.]+).tar.gz checksum

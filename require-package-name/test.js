@@ -1,0 +1,37 @@
+var name = require('./')
+var test = require('tape')
+
+test('gets the package name for a require statement', function(t) {
+  t.equal(name(''), null)
+  t.equal(name('tape/index.js'), 'tape')
+  t.equal(name('tape/'), 'tape')
+  t.equal(name('tape'), 'tape')
+  t.equal(name('tape/foo/bar/index.js'), 'tape')
+  t.equal(name('tape/foo/bar/index'), 'tape')
+  t.equal(name('tape/foo/bar/'), 'tape')
+  t.equal(name('tape/foo/bar'), 'tape')
+  t.equal(name('tape///foo/bar'), 'tape', 'handles extra slashes')
+
+  //scopes
+  t.equal(name('@user/home'), '@user/home')
+  t.equal(name('@user/home/'), '@user/home')
+  t.equal(name('@user/home/foo.js'), '@user/home')
+  t.equal(name('@user//foobar'), '@user/foobar')
+  t.equal(name('@user'), null)
+  t.equal(name('@user/'), null)
+  t.equal(name('@user//'), null)
+
+  //base name
+  t.equal(name.base('tape/foo/bar/index'), 'tape')
+  t.equal(name.base('tape/foo/bar/index'), 'tape')
+  t.equal(name.base('tape/foo/bar/'), 'tape')
+  t.equal(name.base('some-module'), 'some-module')
+  t.equal(name.base('@user/home'), 'home')
+  t.equal(name.base('@user/home/'), 'home')
+  t.equal(name.base('@user/home/foo.js'), 'home')
+  t.equal(name.base('@user//foobar'), 'foobar')
+  t.equal(name.base('@user'), null)
+  t.equal(name.base('@user/'), null)
+  t.equal(name.base('@user//'), null)
+  t.end()
+})
