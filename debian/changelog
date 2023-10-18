@@ -1,3 +1,44 @@
+node-babel-plugin-lodash (3.3.4+~cs2.0.1-7) unstable; urgency=medium
+
+  * Team upload
+  * Update lintian override info format in d/source/lintian-overrides
+    on line 2-7
+  * Update standards version to 4.6.2, no changes needed
+  * Clean test modules (Closes: #1045420)
+
+ -- Yadd <yadd@debian.org>  Tue, 15 Aug 2023 20:30:14 +0400
+
+node-babel-plugin-lodash (3.3.4+~cs2.0.1-6) unstable; urgency=medium
+
+  * Team upload
+  * Rebuild to drop __proto__ from bundle
+
+ -- Yadd <yadd@debian.org>  Tue, 20 Sep 2022 18:35:57 +0200
+
+node-babel-plugin-lodash (3.3.4+~cs2.0.1-5) unstable; urgency=medium
+
+  * Team upload
+  * Update standards version to 4.6.0, no changes needed
+  * Fix debian/watch
+  * Drop dependency to nodejs
+  * Drop useless versioned dependency constraints
+  * Update lintian overrides
+  * Back to unstable
+
+ -- Yadd <yadd@debian.org>  Thu, 25 Nov 2021 14:22:55 +0100
+
+node-babel-plugin-lodash (3.3.4+~cs2.0.1-4) experimental; urgency=medium
+
+  [ Yadd ]
+  * Fix GitHub tags regex
+
+  [ Pirate Praveen ]
+  * Update minimum version of mocha in Build-Depends
+  * Build with node-babel-plugin-add-module-exports (>= 1.0~)
+    (Fixes regression introudced by babel 7 transition)
+
+ -- Pirate Praveen <praveen@debian.org>  Thu, 01 Jul 2021 20:34:15 +0530
+
 node-babel-plugin-lodash (3.3.4+~cs2.0.1-3) unstable; urgency=medium
 
   * Team upload
