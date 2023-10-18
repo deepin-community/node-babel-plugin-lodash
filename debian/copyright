@@ -14,7 +14,7 @@ Comment: Expat license applies to all parts of this software except:
 
 Files: debian/*
 Copyright: 2021, Pirate Praveen <praveen@debian.org>
- 2021, Xavier Guimard <yadd@debian.org>
+ 2021, Yadd <yadd@debian.org>
 License: Expat
 
 Files: debian/tests/test_modules/babel-helper-module-imports/*
@@ -24,10 +24,6 @@ Comment: The upstream distribution does not contain an explicit statement of
  copyright ownership. Pursuant to the Berne Convention for the Protection of
  Literary and Artistic Works, it is assumed that all content is copyright by
  its respective authors unless otherwise stated.
-
-Files: debian/tests/test_modules/require-package-name/*
-Copyright: 2015, Matt DesLauriers
-License: Expat
 
 Files: require-package-name/*
 Copyright: 2015 Matt DesLauriers

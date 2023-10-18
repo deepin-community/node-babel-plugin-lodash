@@ -1,1 +1,4 @@
-.pc/
+.DS_Store
+*.log
+lib
+node_modules
